@@ -1,0 +1,53 @@
+{
+  "manifest_version": 2,
+  "name": "Detangle",
+  "description": "An extension to automate the isolation of corporate browsing from the rest of the web, using multiple Chrome browser instances.",
+  "version": "1.5.1",
+  "icons": {
+    "16":  "icon16.png",
+    "48":  "icon48.png",
+    "128": "icon128.png"
+  },
+  "options_page": "options.html",
+  "incognito": "split",
+  "permissions": [
+    "alarms",
+    "clipboardWrite",
+    "contextMenus",
+    "nativeMessaging",
+    "notifications",
+    "privacy",
+    "storage",
+    "unlimitedStorage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*",
+    "ftp://*/*"
+  ],
+  "background": {
+    "persistent": true,
+    "scripts": ["background.js"]
+  },
+  "storage": {
+    "managed_schema": "managed_storage_schema.json"
+  },
+  "browser_action": {
+    "default_title": "Detangle",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "commands": {
+    "launch_regular": {
+      "description": "Launch the Regular browser"
+    },
+    "launch_isolated": {
+      "description": "Launch the Isolated browser"
+    }
+  }
+}
